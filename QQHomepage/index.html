@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="QQ Logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">消息</a></li>
+                    <li><a href="#">联系人</a></li>
+                    <li><a href="#">动态</a></li>
+                    <li><a href="#">设置</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索">
+                <button type="button" class="search-btn">搜索</button>
+            </div>
+        </header>
+
+        <!-- 主体内容区 -->
+        <main class="main-content">
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <img src="images/avatar1.jpg" alt="用户头像">
+                    </div>
+                    <div class="status-selector">
+                        <select>
+                            <option value="online">在线</option>
+                            <option value="busy">忙碌</option>
+                            <option value="invisible">隐身</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <button>添加好友</button>
+                    <button>创建群组</button>
+                    <button>扫一扫</button>
+                </div>
+            </aside>
+
+            <!-- 好友列表区域 -->
+            <section class="friends-list">
+                <div class="group">
+                    <h3>我的好友</h3>
+                    <ul>
+                        <!-- 好友列表项将通过JS动态生成 -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 聊天窗口 -->
+            <section class="chat-window">
+                <div class="chat-header">
+                    <h2>聊天对象名称</h2>
+                </div>
+                <div class="chat-messages">
+                    <!-- 聊天消息将通过JS动态生成 -->
+                </div>
+                <div class="chat-input">
+                    <div class="toolbar">
+                        <button class="toolbar-btn emoji-btn"><i class="fas fa-smile"></i></button>
+                        <button class="toolbar-btn image-btn"><i class="fas fa-image"></i></button>
+                        <button class="toolbar-btn file-btn"><i class="fas fa-file"></i></button>
+                        <button class="toolbar-btn voice-btn"><i class="fas fa-microphone"></i></button>
+                        <button class="toolbar-btn video-call-btn"><i class="fas fa-video"></i></button>
+                    </div>
+                    <textarea placeholder="输入消息..."></textarea>
+                    <button class="send-btn">发送</button>
+                </div>
+                <div class="emoji-picker" style="display: none;">
+                    <div class="emoji-tabs">
+                        <button class="active">常用</button>
+                        <button>表情</button>
+                        <button>动画</button>
+                    </div>
+                    <div class="emoji-content">
+                        <!-- 表情将通过JS动态生成 -->
+                    </div>
+                </div>
+                <div class="upload-dialog" style="display: none;">
+                    <div class="upload-header">
+                        <h3>上传文件</h3>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="upload-content">
+                        <div class="upload-area">
+                            <input type="file" id="fileInput" multiple>
+                            <label for="fileInput">
+                                <i class="icon-upload"></i>
+                                <span>点击或拖拽文件到此处</span>
+                            </label>
+                        </div>
+                        <div class="upload-list">
+                            <!-- 上传文件列表将通过JS动态生成 -->
+                        </div>
+                    </div>
+                    <div class="upload-footer">
+                        <button class="cancel-btn">取消</button>
+                        <button class="confirm-btn">确定</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 在 main-content 中添加动态区域 -->
+            <section class="moments-section" style="display: none;">
+                <div class="moments-header">
+                    <h2>好友动态</h2>
+                    <button class="post-moment-btn">发布动态</button>
+                </div>
+                <div class="moments-list">
+                    <!-- 动态内容将通过JS动态生成 -->
+                </div>
+                <div class="post-moment-dialog" style="display: none;">
+                    <div class="dialog-header">
+                        <h3>发布动态</h3>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="dialog-content">
+                        <textarea placeholder="分享新鲜事..."></textarea>
+                        <div class="image-upload">
+                            <input type="file" id="momentImageInput" multiple accept="image/*">
+                            <div class="preview-images"></div>
+                            <button class="add-image-btn">
+                                <i class="fas fa-image"></i> 添加图片
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dialog-footer">
+                        <button class="cancel-btn">取消</button>
+                        <button class="publish-btn">发布</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 
